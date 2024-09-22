@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -33,11 +33,11 @@
   <main>
     <header class="sticky top-0 backdrop-blur-sm">
       <div class="bg-[#F9F7F3]">
-        <div class="container mx-auto flex items-center justify-between pt-6 pb-12">
+        <div class="container mx-auto flex items-center justify-between py-6 px-2">
           <!-- Blog Button -->
-          <button class=" bg-secondary text-2xl font-bold rounded-xl px-8 py-4">Blog</button>
+          <button id="blog-btn" class=" bg-secondary text-2xl font-bold rounded-xl px-8 py-4">Blog</button>
           <!-- Logo -->
-          <div class="flex justify-center items-center">
+          <div class="hidden md:flex justify-center items-center">
             <img src="./assets/logo.png" alt="logo" class="pr-1">
             <p class="text-2xl font-medium">Ass Sunnah Foundation</p>
           </div>
@@ -49,20 +49,20 @@
         </div>
       </div>
       <!-- Donation & History Button -->
-      <div class="container mx-auto py-12 flex justify-center gap-10">
+      <div class="container mx-auto py-8 flex justify-center gap-10">
         <button class="bg-secondary text-2xl font-bold rounded-xl px-8 py-4 border-2">Donation</button>
         <button class=" text-2xl font-bold rounded-xl px-8 py-4 border-2">History</button>
       </div>
     </header>
 
     <!-- Donate Blog Section -->
-    <section class="container mx-auto px-2 space-y-12">
-      <div class="flex justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
-        <div class="w-1/2">
+    <section class="container mx-auto px-2 space-y-16 ">
+      <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
+        <div class="md:w-1/2">
           <img src="./assets/noakhali.png" alt="Feni Float" class="w-full">
         </div>
 
-        <div class="w-1/2">
+        <div class="md:w-1/2">
           <div class="flex justify-center bg-slate-300 p-2 w-max rounded-md">
             <img src="./assets/coin.png">
             <!-- donate balance -->
@@ -81,12 +81,12 @@
         </div>
       </div>
 
-      <div class="flex justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
-        <div class="w-1/2">
+      <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
+        <div class="md:w-1/2">
           <img src="./assets/feni.png" alt="Feni Float" class="w-full">
         </div>
 
-        <div class="w-1/2">
+        <div class="md:w-1/2">
           <div class="flex justify-center bg-slate-300 p-2 w-max rounded-md">
             <img src="./assets/coin.png">
             <!-- donate balance -->
@@ -106,12 +106,12 @@
         </div>
       </div>
 
-      <div class="flex justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
-        <div class="w-1/2">
-          <img src="./assets/noakhali.png" alt="Feni Float" class="w-full">
+      <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
+        <div class="md:w-1/2">
+          <img src="./assets/quota-protest.png" alt="Feni Float" class="w-full">
         </div>
 
-        <div class="w-1/2">
+        <div class="md:w-1/2">
           <div class="flex justify-center bg-slate-300 p-2 w-max rounded-md">
             <img src="./assets/coin.png">
             <!-- donate balance -->
@@ -138,6 +138,7 @@
 
     </section>
   </main>
+  <script src="./js/utilities.js"></script>
 </body>
 
 </html>
