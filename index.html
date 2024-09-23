@@ -31,7 +31,7 @@
 
 <body>
   <main>
-    <header class="sticky top-0 backdrop-blur-sm">
+    <header class="sticky top-0 backdrop-blur-md border-b-2">
       <div class="bg-[#F9F7F3]">
         <div class="container mx-auto flex items-center justify-between py-6 px-2">
           <!-- Blog Button -->
@@ -44,19 +44,23 @@
           <!-- Balance -->
           <div class="flex justify-center">
             <img src="./assets/coin.png" alt="coin" class="pr-1">
-            <h3 class="font-medium text-xl"><span>5000</span>BDT</h3>
+            <h3 class="font-medium text-xl"><span id="my-balance">5000</span>BDT</h3>
           </div>
         </div>
       </div>
       <!-- Donation & History Button -->
       <div class="container mx-auto py-8 flex justify-center gap-10">
-        <button class="bg-secondary text-2xl font-bold rounded-xl px-8 py-4 border-2">Donation</button>
-        <button class=" text-2xl font-bold rounded-xl px-8 py-4 border-2">History</button>
+
+        <button id="donation-section-btn"
+          class="bg-secondary text-2xl font-bold rounded-xl px-8 py-4 border-2">Donation</button>
+
+        <button id="history-section-btn" class=" text-2xl font-bold rounded-xl px-8 py-4 border-2">History</button>
       </div>
     </header>
 
     <!-- Donate Blog Section -->
-    <section class="container mx-auto px-2 space-y-16 ">
+    <section id="donate-section" class="container mx-auto px-2 space-y-16 ">
+      <!-- Donate for Noakhali Flood -->
       <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
         <div class="md:w-1/2">
           <img src="./assets/noakhali.png" alt="Feni Float" class="w-full">
@@ -66,7 +70,7 @@
           <div class="flex justify-center bg-slate-300 p-2 w-max rounded-md">
             <img src="./assets/coin.png">
             <!-- donate balance -->
-            <h2 class="text-xl"><span>0</span> BDT</h2>
+            <h2 class="text-xl"><span id="noakhali-balance">1000</span> BDT</h2>
           </div>
           <h2 class="text-5xl font-bold py-6">Donate for Flood at Noakhali, Bangladesh</h2>
           <p class="tracking-wide text-lg py-4">The recent floods in Noakhali have caused significant damage to homes
@@ -76,11 +80,14 @@
             essential supplies and to those affected by this disaster. Every contribution, big or small, makes
             difference. Please
             join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-          <input type="number" placeholder="Enter Donation Amout" class="input input-bordered my-6 w-full">
-          <button class=" bg-secondary text-2xl font-bold rounded-xl px-8 py-4 w-full">Donate</button>
+          <!-- Donate Amount -->
+          <input id="noakhali-donate-input" type="number" placeholder="Enter Donation Amout"
+            class="input input-bordered my-6 w-full">
+          <button id="noakhali-donate-btn"
+            class=" bg-secondary text-2xl font-bold rounded-xl px-8 py-4 w-full">Donate</button>
         </div>
       </div>
-
+      <!-- Donate for Feni Flood-->
       <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
         <div class="md:w-1/2">
           <img src="./assets/feni.png" alt="Feni Float" class="w-full">
@@ -105,7 +112,7 @@
           <button class=" bg-secondary text-2xl font-bold rounded-xl px-8 py-4 w-full">Donate</button>
         </div>
       </div>
-
+      <!-- Donate for Quota Movement -->
       <div class="flex flex-col md:flex-row justify-center gap-4 border-y-2 p-4 shadow-md rounded-xl">
         <div class="md:w-1/2">
           <img src="./assets/quota-protest.png" alt="Feni Float" class="w-full">
@@ -134,10 +141,11 @@
     </section>
 
     <!-- Histroy -->
-    <section>
-
+    <section id="history-section" class="hidden">
+      <h1 class="text-5xl text-center pb-10">History Section </h1>
     </section>
   </main>
+  <script src="./button-press.js"></script>
   <script src="./js/utilities.js"></script>
 </body>
 
