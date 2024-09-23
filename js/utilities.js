@@ -40,21 +40,21 @@ document
     const noakhaliInput = parseFloat(
       document.getElementById('noakhali-donate-input').value
     );
-    const totalnoakhaliBalance = noakhaliBalance + noakhaliInput;
-
-    const myNewBalance = myBalance - noakhaliInput;
-
-    document.getElementById('my-balance').innerText = myNewBalance;
-    document.getElementById('noakhali-balance').innerText =
-      totalnoakhaliBalance;
 
     if (isNaN(noakhaliInput)) {
       alert('Input Must be A Number');
-    } else if (noakhaliInput < 0) {
-      alert('Input Must be A Positive Number');
+    } else if (noakhaliInput < 20) {
+      alert('Input Minimum 20 Taka');
     } else if (myBalance < noakhaliInput) {
       alert('Insufficient Balance');
     } else {
+      const totalnoakhaliBalance = noakhaliBalance + noakhaliInput;
+
+      const myNewBalance = myBalance - noakhaliInput;
+
+      document.getElementById('my-balance').innerText = myNewBalance;
+      document.getElementById('noakhali-balance').innerText =
+        totalnoakhaliBalance;
       alert('Succeed');
     }
   });
@@ -63,5 +63,63 @@ document
 document
   .getElementById('feni-donate-btn')
   .addEventListener('click', function () {
-    console.log('feni-donate-btn clicked');
+    const myBalance = parseFloat(
+      document.getElementById('my-balance').innerText
+    );
+    const feniBalance = parseFloat(
+      document.getElementById('feni-balance').innerText
+    );
+
+    const feniInput = parseFloat(
+      document.getElementById('feni-donate-input').value
+    );
+
+    if (isNaN(feniInput)) {
+      alert('Input Must be A Number');
+    } else if (feniInput < 20) {
+      alert('Input Minimum 20 Taka');
+    } else if (myBalance < feniInput) {
+      alert('Insufficient Balance');
+    } else {
+      const totalFeniBalance = feniBalance + feniInput;
+
+      const myNewBalance = myBalance - feniInput;
+
+      document.getElementById('my-balance').innerText = myNewBalance;
+      document.getElementById('feni-balance').innerText = totalFeniBalance;
+      alert('Succeed');
+    }
+  });
+
+// Donate For Quata Protest
+document
+  .getElementById('quota-donate-btn')
+  .addEventListener('click', function () {
+    const myBalance = parseFloat(
+      document.getElementById('my-balance').innerText
+    );
+    const quataBalance = parseFloat(
+      document.getElementById('quata-balance').innerText
+    );
+
+    const quataInput = parseFloat(
+      document.getElementById('quata-donate-input').value
+    );
+
+    const totalQuataBalance = quataBalance + quataInput;
+
+    const myNewBalance = myBalance - quataInput;
+
+    document.getElementById('my-balance').innerText = myNewBalance;
+    document.getElementById('quata-balance').innerText = totalQuataBalance;
+
+    if (isNaN(quataInput)) {
+      alert('Input Must be A Number');
+    } else if (quataInput < 20) {
+      alert('Input Minimum 20 Taka');
+    } else if (myBalance < quataInput) {
+      alert('Insufficient Balance');
+    } else {
+      alert('Succeed');
+    }
   });
