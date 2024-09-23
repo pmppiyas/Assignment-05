@@ -55,6 +55,13 @@ document
       document.getElementById('my-balance').innerText = myNewBalance;
       document.getElementById('noakhali-balance').innerText =
         totalnoakhaliBalance;
+
+      const newDiv = document.createElement('div');
+      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+        <p class="text-xl md:text-2xl">${noakhaliInput} Taka is Donated for "Donate for Flood at Noakhali, Bangladesh"</p>
+        <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
+      </div>`;
+      document.getElementById('history-section').appendChild(newDiv);
       alert('Succeed');
     }
   });
@@ -87,6 +94,13 @@ document
 
       document.getElementById('my-balance').innerText = myNewBalance;
       document.getElementById('feni-balance').innerText = totalFeniBalance;
+
+      const newDiv = document.createElement('div');
+      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+        <p class="text-xl md:text-2xl">${feniInput} Taka is Donated for "Donate for Flood Relief in Feni,Bangladesh"</p>
+        <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
+      </div>`;
+      document.getElementById('history-section').appendChild(newDiv);
       alert('Succeed');
     }
   });
@@ -106,13 +120,6 @@ document
       document.getElementById('quata-donate-input').value
     );
 
-    const totalQuataBalance = quataBalance + quataInput;
-
-    const myNewBalance = myBalance - quataInput;
-
-    document.getElementById('my-balance').innerText = myNewBalance;
-    document.getElementById('quata-balance').innerText = totalQuataBalance;
-
     if (isNaN(quataInput)) {
       alert('Input Must be A Number');
     } else if (quataInput < 20) {
@@ -120,6 +127,18 @@ document
     } else if (myBalance < quataInput) {
       alert('Insufficient Balance');
     } else {
+      const totalQuataBalance = quataBalance + quataInput;
+
+      const myNewBalance = myBalance - quataInput;
+
+      document.getElementById('my-balance').innerText = myNewBalance;
+      document.getElementById('quata-balance').innerText = totalQuataBalance;
+      const newDiv = document.createElement('div');
+      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+        <p class="text-xl md:text-2xl">${quataInput} Taka is Donated for "Aid for Injured in the Quota Movement"</p>
+        <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
+      </div>`;
+      document.getElementById('history-section').appendChild(newDiv);
       alert('Succeed');
     }
   });
