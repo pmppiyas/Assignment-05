@@ -33,12 +33,8 @@ const modal = document.getElementById('my_modal');
 document
   .getElementById('noakhali-donate-btn')
   .addEventListener('click', function () {
-    const myBalance = parseFloat(
-      document.getElementById('my-balance').innerText
-    );
-    const noakhaliBalance = parseFloat(
-      document.getElementById('noakhali-balance').innerText
-    );
+    const myBalance = getInnerTextById('my-balance');
+    const noakhaliBalance = getInnerTextById('noakhali-balance');
 
     const noakhaliInput = parseFloat(
       document.getElementById('noakhali-donate-input').value
@@ -59,13 +55,18 @@ document
       document.getElementById('noakhali-balance').innerText =
         totalnoakhaliBalance;
 
+      // for add History
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center text-center">
         <p class="text-xl md:text-2xl">${noakhaliInput} Taka is Donated for "Donate for Flood at Noakhali, Bangladesh"</p>
+        <p class="text-xl md:text-xl">Current balance: ${myNewBalance}Tk</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
-      document.getElementById('history-section').appendChild(newDiv);
+
+      historySection.insertBefore(newDiv, historySection.firstChild);
       document.getElementById('my_modal_1').showModal();
+      document.getElementById('modal-noakhali-amount').innerText =
+        noakhaliInput;
     }
   });
 
@@ -73,12 +74,8 @@ document
 document
   .getElementById('feni-donate-btn')
   .addEventListener('click', function () {
-    const myBalance = parseFloat(
-      document.getElementById('my-balance').innerText
-    );
-    const feniBalance = parseFloat(
-      document.getElementById('feni-balance').innerText
-    );
+    const myBalance = getInnerTextById('my-balance');
+    const feniBalance = getInnerTextById('feni-balance');
 
     const feniInput = parseFloat(
       document.getElementById('feni-donate-input').value
@@ -99,12 +96,14 @@ document
       document.getElementById('feni-balance').innerText = totalFeniBalance;
 
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center text-center">
         <p class="text-xl md:text-2xl">${feniInput} Taka is Donated for "Donate for Flood Relief in Feni,Bangladesh"</p>
+        <p class="text-xl md:text-xl">Current balance: ${myNewBalance}Tk</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
-      document.getElementById('history-section').appendChild(newDiv);
-      document.getElementById('my_modal_1').showModal();
+      historySection.insertBefore(newDiv, historySection.firstChild);
+      document.getElementById('my_modal_2').showModal();
+      document.getElementById('modal-feni-amount').innerText = feniInput;
     }
   });
 
@@ -112,12 +111,8 @@ document
 document
   .getElementById('quota-donate-btn')
   .addEventListener('click', function () {
-    const myBalance = parseFloat(
-      document.getElementById('my-balance').innerText
-    );
-    const quataBalance = parseFloat(
-      document.getElementById('quata-balance').innerText
-    );
+    const myBalance = getInnerTextById('my-balance');
+    const quataBalance = getInnerTextById('quata-balance');
 
     const quataInput = parseFloat(
       document.getElementById('quata-donate-input').value
@@ -137,11 +132,13 @@ document
       document.getElementById('my-balance').innerText = myNewBalance;
       document.getElementById('quata-balance').innerText = totalQuataBalance;
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center text-center">
         <p class="text-xl md:text-2xl">${quataInput} Taka is Donated for "Aid for Injured in the Quota Movement"</p>
+        <p class="text-xl md:text-xl">Current balance: ${myNewBalance}Tk</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
-      document.getElementById('history-section').appendChild(newDiv);
-      document.getElementById('my_modal_1').showModal();
+      historySection.insertBefore(newDiv, historySection.firstChild);
+      document.getElementById('my_modal_3').showModal();
+      document.getElementById('modal-quata-amount').innerText = quataInput;
     }
   });
