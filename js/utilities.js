@@ -26,6 +26,9 @@ donationButton.addEventListener('click', function () {
   historyButton.classList.remove('bg-secondary');
 });
 
+// modal
+const modal = document.getElementById('my_modal');
+
 // Donate For Noakhali Floot
 document
   .getElementById('noakhali-donate-btn')
@@ -57,12 +60,12 @@ document
         totalnoakhaliBalance;
 
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
         <p class="text-xl md:text-2xl">${noakhaliInput} Taka is Donated for "Donate for Flood at Noakhali, Bangladesh"</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
       document.getElementById('history-section').appendChild(newDiv);
-      alert('Succeed');
+      document.getElementById('my_modal_1').showModal();
     }
   });
 
@@ -96,12 +99,12 @@ document
       document.getElementById('feni-balance').innerText = totalFeniBalance;
 
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
         <p class="text-xl md:text-2xl">${feniInput} Taka is Donated for "Donate for Flood Relief in Feni,Bangladesh"</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
       document.getElementById('history-section').appendChild(newDiv);
-      alert('Succeed');
+      document.getElementById('my_modal_1').showModal();
     }
   });
 
@@ -134,11 +137,11 @@ document
       document.getElementById('my-balance').innerText = myNewBalance;
       document.getElementById('quata-balance').innerText = totalQuataBalance;
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class="py-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
+      newDiv.innerHTML = `<div class="p-4 border-1 shadow-md  bg-secondary flex flex-col items-center">
         <p class="text-xl md:text-2xl">${quataInput} Taka is Donated for "Aid for Injured in the Quota Movement"</p>
         <p class="text-xl md:text-2xl">${new Date().toLocaleString()}</p>
       </div>`;
       document.getElementById('history-section').appendChild(newDiv);
-      alert('Succeed');
+      document.getElementById('my_modal_1').showModal();
     }
   });
