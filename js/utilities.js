@@ -36,9 +36,7 @@ document
     const myBalance = getInnerTextById('my-balance');
     const noakhaliBalance = getInnerTextById('noakhali-balance');
 
-    const noakhaliInput = parseFloat(
-      document.getElementById('noakhali-donate-input').value
-    );
+    const noakhaliInput = getValueById('noakhali-donate-input');
 
     if (isNaN(noakhaliInput)) {
       alert('Input Must be A Number');
@@ -77,9 +75,7 @@ document
     const myBalance = getInnerTextById('my-balance');
     const feniBalance = getInnerTextById('feni-balance');
 
-    const feniInput = parseFloat(
-      document.getElementById('feni-donate-input').value
-    );
+    const feniInput = getValueById('feni-donate-input');
 
     if (isNaN(feniInput)) {
       alert('Input Must be A Number');
@@ -114,9 +110,7 @@ document
     const myBalance = getInnerTextById('my-balance');
     const quataBalance = getInnerTextById('quata-balance');
 
-    const quataInput = parseFloat(
-      document.getElementById('quata-donate-input').value
-    );
+    const quataInput = getValueById('quata-donate-input');
 
     if (isNaN(quataInput)) {
       alert('Input Must be A Number');
